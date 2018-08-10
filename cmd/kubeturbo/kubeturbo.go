@@ -46,7 +46,7 @@ func main() {
 	s.AddFlags(pflag.CommandLine)
 	flag.InitFlags()
 
-	glog.Infof("Run Kubeturbo service (GIT_COMMIT: %s)", os.Getenv("GIT_COMMIT"))
+	glog.Infof("Run Kubeturbo service test-fork (GIT_COMMIT: %s)", os.Getenv("GIT_COMMIT"))
 
 	s.Run(pflag.CommandLine.Args())
 }

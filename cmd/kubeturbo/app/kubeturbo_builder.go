@@ -10,6 +10,8 @@ import (
 	"strconv"
 	"syscall"
 
+	"github.com/turbonomic/kubeturbo/pkg"
+	"github.com/turbonomic/kubeturbo/test/flag"
 	apiv1 "k8s.io/api/core/v1"
 	"k8s.io/apiserver/pkg/server/healthz"
 	"k8s.io/client-go/kubernetes"
@@ -18,9 +20,7 @@ import (
 	restclient "k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/client-go/tools/record"
-
-	"github.com/turbonomic/kubeturbo/pkg"
-	"github.com/turbonomic/kubeturbo/test/flag"
+	clusterapi "sigs.k8s.io/cluster-api/pkg/client/clientset_generated/clientset/typed/cluster/v1alpha1"
 
 	"github.com/golang/glog"
 	"github.com/prometheus/client_golang/prometheus"
@@ -208,6 +208,7 @@ func (s *VMTServer) Run(_ []string) error {
 
 	kubeConfig := s.createKubeConfigOrDie()
 	glog.V(3).Infof("kubeConfig: %+v", kubeConfig)
+	clusterapi.NewForConfig(kubeConfig)
 
 	kubeClient := s.createKubeClientOrDie(kubeConfig)
 

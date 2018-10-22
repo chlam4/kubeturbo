@@ -26,6 +26,7 @@ const (
 
 	// The attribute used for stitching with other probes (e.g., prometurbo) with app and vapp
 	AppStitchingAttr string = "IP"
+	VappStitchingAttr string = "VappIds"
 )
 
 // The property type that is used for stitching. For example "UUID", "IP address".

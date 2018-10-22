@@ -50,8 +50,9 @@ func (builder *ServiceEntityDTOBuilder) BuildSvcEntityDTO(servicePodMap map[*api
 		}
 		ebuilder.VirtualApplicationData(vAppData)
 
-		// set the ip property for stitching
+		// set the properties for stitching
 		ebuilder.WithProperty(getIPProperty(pods))
+		ebuilder.WithProperty(getVappIdProperty(serviceName))
 
 		ebuilder.WithPowerState(proto.EntityDTO_POWERED_ON)
 
@@ -143,4 +144,17 @@ func getIPProperty(pods []*api.Pod) *proto.EntityDTO_EntityProperty {
 	}
 
 	return ipProperty
+}
+
+// Get the VappId property of the vApp for stitching purpose
+func getVappIdProperty(vappId string) *proto.EntityDTO_EntityProperty {
+	ns := stitching.DefaultPropertyNamespace
+	attr := stitching.VappStitchingAttr
+	property := &proto.EntityDTO_EntityProperty{
+		Namespace: &ns,
+		Name:      &attr,
+		Value:     &vappId,
+	}
+
+	return property
 }

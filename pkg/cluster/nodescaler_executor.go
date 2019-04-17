@@ -22,11 +22,12 @@ import (
 	"time"
 
 	"github.com/golang/glog"
-	clusterapiutil "sigs.k8s.io/cluster-api/pkg/util"
-	clusterclient "sigs.k8s.io/cluster-api/pkg/client/clientset_generated/clientset"
 	"github.com/spf13/cobra"
 	turboexec "github.com/turbonomic/kubeturbo/pkg/action/executor"
 	"k8s.io/apiserver/pkg/util/logs"
+	"k8s.io/client-go/kubernetes"
+	clusterclient "sigs.k8s.io/cluster-api/pkg/client/clientset_generated/clientset"
+	clusterapiutil "sigs.k8s.io/cluster-api/pkg/util"
 )
 
 type ScaleOptions struct {
@@ -63,7 +64,8 @@ func RunScale(ro *ScaleOptions) error {
 	}
 
 	// create client for core kubernetes API
-	kubeClient, err := clusterclient.NewKubernetesClient(nil)
+	// TODO: add code to construct a rest.Config as the argument below
+	kubeClient, err := kubernetes.NewForConfig(nil)
 	if err != nil {
 		err = fmt.Errorf("error creating kube client set: %v", err)
 		return err
@@ -80,7 +82,10 @@ func RunScale(ro *ScaleOptions) error {
 	// Test entities
 	//
 
-	actionItemDTO := ro.nodeName
+	// TODO: Construct the following properly
+	//actionItemDTO := ro.nodeName
+	actionItemDTO := &turboexec.TurboActionExecutorInput{}
+
 	tracker := "replace this string with tracker object when integrated"
 	var executor turboexec.ScaleActionExecutor
 	if ro.scaleOut {

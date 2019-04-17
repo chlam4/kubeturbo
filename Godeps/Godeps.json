@@ -63,6 +63,7 @@
 		},
 		{
 			"ImportPath": "github.com/google/btree",
+			"Comment": "v1.0.0",
 			"Rev": "4030bb1f1f0c35b30ca7009e9ebd06849dd45306"
 		},
 		{
@@ -209,48 +210,48 @@
 		},
 		{
 			"ImportPath": "github.com/turbonomic/turbo-go-sdk/pkg",
-			"Comment": "v6.3-4-g235640c",
-			"Rev": "235640ce75a8641201d8d86ac2302cc8e08759db"
+			"Comment": "v6.3-5-g93be22d",
+			"Rev": "93be22d591a35e4834feb71048213b80675610dd"
 		},
 		{
 			"ImportPath": "github.com/turbonomic/turbo-go-sdk/pkg/builder",
-			"Comment": "v6.3-4-g235640c",
-			"Rev": "235640ce75a8641201d8d86ac2302cc8e08759db"
+			"Comment": "v6.3-5-g93be22d",
+			"Rev": "93be22d591a35e4834feb71048213b80675610dd"
 		},
 		{
 			"ImportPath": "github.com/turbonomic/turbo-go-sdk/pkg/builder/group",
-			"Comment": "v6.3-4-g235640c",
-			"Rev": "235640ce75a8641201d8d86ac2302cc8e08759db"
+			"Comment": "v6.3-5-g93be22d",
+			"Rev": "93be22d591a35e4834feb71048213b80675610dd"
 		},
 		{
 			"ImportPath": "github.com/turbonomic/turbo-go-sdk/pkg/mediationcontainer",
-			"Comment": "v6.3-4-g235640c",
-			"Rev": "235640ce75a8641201d8d86ac2302cc8e08759db"
+			"Comment": "v6.3-5-g93be22d",
+			"Rev": "93be22d591a35e4834feb71048213b80675610dd"
 		},
 		{
 			"ImportPath": "github.com/turbonomic/turbo-go-sdk/pkg/probe",
-			"Comment": "v6.3-4-g235640c",
-			"Rev": "235640ce75a8641201d8d86ac2302cc8e08759db"
+			"Comment": "v6.3-5-g93be22d",
+			"Rev": "93be22d591a35e4834feb71048213b80675610dd"
 		},
 		{
 			"ImportPath": "github.com/turbonomic/turbo-go-sdk/pkg/proto",
-			"Comment": "v6.3-4-g235640c",
-			"Rev": "235640ce75a8641201d8d86ac2302cc8e08759db"
+			"Comment": "v6.3-5-g93be22d",
+			"Rev": "93be22d591a35e4834feb71048213b80675610dd"
 		},
 		{
 			"ImportPath": "github.com/turbonomic/turbo-go-sdk/pkg/service",
-			"Comment": "v6.3-4-g235640c",
-			"Rev": "235640ce75a8641201d8d86ac2302cc8e08759db"
+			"Comment": "v6.3-5-g93be22d",
+			"Rev": "93be22d591a35e4834feb71048213b80675610dd"
 		},
 		{
 			"ImportPath": "github.com/turbonomic/turbo-go-sdk/pkg/supplychain",
-			"Comment": "v6.3-4-g235640c",
-			"Rev": "235640ce75a8641201d8d86ac2302cc8e08759db"
+			"Comment": "v6.3-5-g93be22d",
+			"Rev": "93be22d591a35e4834feb71048213b80675610dd"
 		},
 		{
 			"ImportPath": "github.com/turbonomic/turbo-go-sdk/pkg/version",
-			"Comment": "v6.3-4-g235640c",
-			"Rev": "235640ce75a8641201d8d86ac2302cc8e08759db"
+			"Comment": "v6.3-5-g93be22d",
+			"Rev": "93be22d591a35e4834feb71048213b80675610dd"
 		},
 		{
 			"ImportPath": "golang.org/x/crypto/ssh/terminal",

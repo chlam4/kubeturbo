@@ -949,9 +949,12 @@ func (sc *msScalingController) waitForNodeProvisioning(newM *clusterv1.Machine) 
 	// wait for Machine's status to indicate Node creation final status
 	stateDesc := &TurboActionExecutorOutput{
 		Succeeded: true,
-		Descr:     fmt.Sprintf("Machine %s Node creation status is final", newM.Name),
+		// TODO: TurboActionExecutorOutput doesn't currently have Descr field
+		//Descr:     fmt.Sprintf("Machine %s Node creation status is final", newM.Name),
 	}
-	err := sc.waitForState(stateDesc.Descr, nodeCreatedMaxWaits, nodeCreatedWaitTime, 70, 90, sc.isNodeSuccessOrError, newM.Name)
+	// TODO: Replace the following with stateDesc.Descr once the above TODO is done
+	descr := fmt.Sprintf("Machine %s Node creation status is final", newM.Name)
+	err := sc.waitForState(descr, nodeCreatedMaxWaits, nodeCreatedWaitTime, 70, 90, sc.isNodeSuccessOrError, newM.Name)
 	if err != nil {
 		return nil, err
 	}
@@ -972,8 +975,8 @@ func (sc *msScalingController) waitForNodeProvisioning(newM *clusterv1.Machine) 
 	}
 
 	// wait for new Node to be in Ready state
-	stateDesc.Descr = fmt.Sprintf("Node %s is Ready", newNName)
-	err = sc.waitForState(stateDesc.Descr, nodeReadyMaxWaits, nodeReadyWaitTime, 90, 100, sc.isNodeReady, newNName)
+	descr = fmt.Sprintf("Node %s is Ready", newNName)
+	err = sc.waitForState(descr, nodeReadyMaxWaits, nodeReadyWaitTime, 90, 100, sc.isNodeReady, newNName)
 	if err != nil {
 		return nil, err
 	}
@@ -999,9 +1002,13 @@ func (sc *msScalingController) waitForNodeDeprovisioning(deletedM *clusterv1.Mac
 	// wait for Node to be deleted or exit Ready state
 	stateDesc := &TurboActionExecutorOutput{
 		Succeeded: true,
-		Descr:     fmt.Sprintf("Node %s deleted or exited Ready state", deletedNName),
+		// TODO: TurboActionExecutorOutput doesn't currently have Descr field
+		//Descr:     fmt.Sprintf("Node %s deleted or exited Ready state", deletedNName),
 	}
-	err := sc.waitForState(stateDesc.Descr, nodeNotReadyMaxWaits, nodeNotReadyWaitTime, 70, 100, sc.isNodeDeletedOrNotReady, deletedNName)
+	// TODO: Replace the following with stateDesc.Descr once the above TODO is done
+	descr := fmt.Sprintf("Node %s deleted or exited Ready state", deletedNName)
+
+	err := sc.waitForState(descr, nodeNotReadyMaxWaits, nodeNotReadyWaitTime, 70, 100, sc.isNodeDeletedOrNotReady, deletedNName)
 	if err != nil {
 		return nil, err
 	}

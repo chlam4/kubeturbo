@@ -18,6 +18,7 @@ require (
 	github.com/gorilla/websocket v0.0.0-20180924232612-3130e8d3f198 // indirect
 	github.com/gregjones/httpcache v0.0.0-20180305231024-9cad4c3443a7 // indirect
 	github.com/imdario/mergo v0.3.6 // indirect
+	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/json-iterator/go v0.0.0-20180701071628-ab8a2e0c74be // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect
 	github.com/mitchellh/hashstructure v0.0.0-20170609045927-2bca23e0e452
@@ -33,6 +34,7 @@ require (
 	github.com/prometheus/common v0.0.0-20180801064454-c7de2306084e // indirect
 	github.com/prometheus/procfs v0.0.0-20190104112138-b1a0a9a36d74 // indirect
 	github.com/sirupsen/logrus v0.0.0-20170822132746-89742aefa4b2 // indirect
+	github.com/spf13/cobra v0.0.3
 	github.com/spf13/pflag v1.0.1
 	github.com/stretchr/testify v0.0.0-20180319223459-c679ae2cc0cb
 	github.com/turbonomic/turbo-api v0.0.0-20180816193551-ed948ba97e70 // indirect

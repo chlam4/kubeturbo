@@ -137,6 +137,7 @@ func (builder *applicationEntityDTOBuilder) getCommoditiesSold(pod *api.Pod, ind
 	// Else, it is computed using the container IP
 	if svc != nil {
 		key = util.GetServiceClusterID(svc)
+		key = appendIndexIfNonZero(key, index)
 	} else {
 		key = getAppStitchingProperty(pod, index)
 	}
@@ -209,10 +210,13 @@ func (builder *applicationEntityDTOBuilder) getApplicationProperties(pod *api.Po
 func getAppStitchingProperty(pod *api.Pod, index int) string {
 	// For the container with index 0, the property is the pod ip.
 	// For other containers, the container index is appended with hypen, i.e., [IP]-[Index]
-	property := pod.Status.PodIP
-	if index > 0 {
-		property = fmt.Sprintf("%s-%d", pod.Status.PodIP, index)
-	}
+	return appendIndexIfNonZero(pod.Status.PodIP, index)
+}
 
+// Append the index to the given property if the index is positive.
+func appendIndexIfNonZero(property string, index int) string {
+	if index > 0 {
+		return fmt.Sprintf("%s-%d", property, index)
+	}
 	return property
 }
